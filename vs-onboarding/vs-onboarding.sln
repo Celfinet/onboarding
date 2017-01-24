@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "staircase", "staircase\stai
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "utopian-tree", "utopian-tree\utopian-tree.csproj", "{8DE04FD3-0664-46F8-B3A6-139AE43CE07C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pangrams", "pangrams\pangrams.csproj", "{3C144A35-FC66-4DC9-B6A8-8E2713C5B223}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{8DE04FD3-0664-46F8-B3A6-139AE43CE07C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DE04FD3-0664-46F8-B3A6-139AE43CE07C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DE04FD3-0664-46F8-B3A6-139AE43CE07C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C144A35-FC66-4DC9-B6A8-8E2713C5B223}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C144A35-FC66-4DC9-B6A8-8E2713C5B223}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C144A35-FC66-4DC9-B6A8-8E2713C5B223}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C144A35-FC66-4DC9-B6A8-8E2713C5B223}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
