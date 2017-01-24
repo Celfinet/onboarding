@@ -17,8 +17,8 @@ internal class Solution
             int w = counter;
             while (w >= m)
             {
-                var d = w / m;
-                var r = w % m;
+                int d = w / m;
+                int r = w % m;
                 w = r + d;
                 counter += d;
             }
