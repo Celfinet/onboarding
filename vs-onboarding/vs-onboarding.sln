@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fibonacci-modified", "fibon
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "chocolate-feast", "chocolate-feast\chocolate-feast.csproj", "{3DEE3A48-D7A4-40C2-8D16-C30C0A512015}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "maximizing-xor", "maximizing-xor\maximizing-xor.csproj", "{A3AE5891-1C98-4266-B15B-1C32CB559E6F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{3DEE3A48-D7A4-40C2-8D16-C30C0A512015}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DEE3A48-D7A4-40C2-8D16-C30C0A512015}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DEE3A48-D7A4-40C2-8D16-C30C0A512015}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3AE5891-1C98-4266-B15B-1C32CB559E6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3AE5891-1C98-4266-B15B-1C32CB559E6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3AE5891-1C98-4266-B15B-1C32CB559E6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3AE5891-1C98-4266-B15B-1C32CB559E6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
