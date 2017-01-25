@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "chocolate-feast", "chocolat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "maximizing-xor", "maximizing-xor\maximizing-xor.csproj", "{A3AE5891-1C98-4266-B15B-1C32CB559E6F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sherlock-and-the-beast", "sherlock-and-the-beast\sherlock-and-the-beast.csproj", "{B9612E60-F8F1-45E7-83C6-B691C47B2258}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{A3AE5891-1C98-4266-B15B-1C32CB559E6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3AE5891-1C98-4266-B15B-1C32CB559E6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3AE5891-1C98-4266-B15B-1C32CB559E6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9612E60-F8F1-45E7-83C6-B691C47B2258}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9612E60-F8F1-45E7-83C6-B691C47B2258}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9612E60-F8F1-45E7-83C6-B691C47B2258}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9612E60-F8F1-45E7-83C6-B691C47B2258}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
