@@ -1,0 +1,13 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Cfn.OnBoarding.TDD.Classroom
+{
+    public interface IClassroom
+    {
+        string GetExercicesReport(params object[] parameters);
+    }
+}
