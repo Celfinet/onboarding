@@ -135,5 +135,20 @@ namespace Cfn.OnBoarding.TDD.StringCalculator.UnitTests
             Assert.AreEqual(expected, result);
         }
 
+
+        [TestCase("//[***]\n1***2***3", 6)]
+        [Description("Should use Add method when input can set delimiters within brackets")]
+        public void AddTestSetDelimiterWithinBracketsString(string input, int expected)
+        {
+
+            //Arrange
+            var strCalculator = new StringCalculator();
+
+            //Act
+            var result = strCalculator.Add(input);
+
+            //Assert
+            Assert.AreEqual(expected, result);
+        }
     }
 }
