@@ -11,9 +11,9 @@ namespace Cfn.OnBoarding.TDD.StringCalculator.UnitTests
     [TestFixture]
     public class StringCalculatorTests
     {
-        [TestCase("",0)]
+        [TestCase("", 0)]
         [Description("Should use Add method when input is an empty string")]
-        public void AddTestEmptyString(string input,int expected)
+        public void AddTestEmptyString(string input, int expected)
         {
 
             //Arrange
@@ -22,7 +22,7 @@ namespace Cfn.OnBoarding.TDD.StringCalculator.UnitTests
             //Act
             var result = strCalculator.Add(input);
             //Assert
-            Assert.AreEqual(expected,result);
+            Assert.AreEqual(expected, result);
         }
 
         [TestCase("1", 1)]
@@ -109,7 +109,7 @@ namespace Cfn.OnBoarding.TDD.StringCalculator.UnitTests
             var strCalculator = new StringCalculator();
 
             //Act within Assert
-            
+
             //Assert
             Assert.Throws<NegativeNotAllowedException>(
                 () =>
@@ -119,8 +119,8 @@ namespace Cfn.OnBoarding.TDD.StringCalculator.UnitTests
             );
         }
 
-        [TestCase("1,1000,3,5",9)]
-        [TestCase("2,1001",2)]
+        [TestCase("1,1000,3,5", 9)]
+        [TestCase("2,1001", 2)]
         [Description("Should use Add method when input has numbers bigger than 1000")]
         public void AddTestBigNumberstring(string input, int expected)
         {
@@ -139,6 +139,22 @@ namespace Cfn.OnBoarding.TDD.StringCalculator.UnitTests
         [TestCase("//[***]\n1***2***3", 6)]
         [Description("Should use Add method when input can set delimiters within brackets")]
         public void AddTestSetDelimiterWithinBracketsString(string input, int expected)
+        {
+
+            //Arrange
+            var strCalculator = new StringCalculator();
+
+            //Act
+            var result = strCalculator.Add(input);
+
+            //Assert
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestCase("//[*][%]\n1*2%3", 6)]
+        [TestCase("//[*][%#]\n1*2%#3", 6)]
+        [Description("Should use Add method when input can set multiples delimiters within brackets")]
+        public void AddTestSetMultiplesDelimiterWithinBracketsString(string input, int expected)
         {
 
             //Arrange

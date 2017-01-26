@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Cfn.OnBoarding.TDD.StringCalculator
 {
@@ -24,24 +22,35 @@ namespace Cfn.OnBoarding.TDD.StringCalculator
             if ("//".Equals(number[0].ToString() + number[1].ToString()))
             {
                 var posF = 0;
-                string dl;
+                var countDl = 0;
+                var dic = new Dictionary<int, int>();
                 for (int i = 0; i < number.Length; i++)
                 {
-                    if ('\n'.Equals(number[i]))
+                    if ('['.Equals(number[i]))
+                    {
+                        countDl = i;
+                    }
+                    else if (']'.Equals(number[i]))
+                    {
+                        dic.Add(countDl, i);
+                    }
+                    else if ('\n'.Equals(number[i]))
                     {
                         posF = i;
                         break;
                     }
                 }
-                if ("[".Equals(number[2].ToString()))
+                if (dic.Any())
                 {
-                    dl = number.Substring(3, (posF - 2) - 2);
+                    foreach (var item in dic)
+                    {
+                        delimiters.Add(number.Substring(item.Key + 1, (item.Value - 1) - item.Key));
+                    }
                 }
                 else
                 {
-                    dl = number[posF - 1].ToString();
+                    delimiters.Add(number[posF - 1].ToString());
                 }
-                delimiters.Add(dl);
                 var length = number.Length - (posF + 1);
                 number = number.Substring(posF + 1, length);
             }
@@ -56,7 +65,6 @@ namespace Cfn.OnBoarding.TDD.StringCalculator
             }
             lNumbers = lNumbers.Where(x => x > 0 && x < 1000).ToList();
             return lNumbers.Aggregate(0, (i, acc) => acc += i);
-
         }
     }
 }
