@@ -43,6 +43,7 @@ namespace Cfn.OnBoarding.TDD.StringCalculator
                 var strError ="negative not allowed: "+ lNegNumbers.ConvertAll(x => x.ToString()).Aggregate("", (i, acc) => acc += i + ";");
                 throw new NegativeNotAllowedException(strError);
             }
+            lNumbers = lNumbers.Where(x => x > 0 && x < 1000).ToList();
             return lNumbers.Aggregate(0, (i, acc) => acc += i);
 
         }

@@ -119,5 +119,21 @@ namespace Cfn.OnBoarding.TDD.StringCalculator.UnitTests
             );
         }
 
+        [TestCase("1,1000,3,5",9)]
+        [TestCase("2,1001",2)]
+        [Description("Should use Add method when input has numbers bigger than 1000")]
+        public void AddTestBigNumberstring(string input, int expected)
+        {
+
+            //Arrange
+            var strCalculator = new StringCalculator();
+
+            //Act
+            var result = strCalculator.Add(input);
+
+            //Assert
+            Assert.AreEqual(expected, result);
+        }
+
     }
 }
