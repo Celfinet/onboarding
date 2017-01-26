@@ -47,6 +47,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cfn.OnBoarding.TDD.Classroo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cfn.OnBoarding.TDD.Classroom.Math.UnitTests", "Cfn.OnBoarding.TDD.Classroom.Math.UnitTests\Cfn.OnBoarding.TDD.Classroom.Math.UnitTests.csproj", "{48FF01C1-383E-4CDA-8F0F-9F16D9620FC7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cfn.OnBoarding.TDD.StringCalculator", "Cfn.OnBoarding.TDD.StringCalculator\Cfn.OnBoarding.TDD.StringCalculator.csproj", "{EA7C66AF-882F-4246-95C8-C19A126FB2DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cfn.OnBoarding.TDD.StringCalculator.UnitTests", "Cfn.OnBoarding.TDD.StringCalculator.UnitTests\Cfn.OnBoarding.TDD.StringCalculator.UnitTests.csproj", "{DDD66186-997D-496A-A589-12484A930277}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -129,6 +133,14 @@ Global
 		{48FF01C1-383E-4CDA-8F0F-9F16D9620FC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48FF01C1-383E-4CDA-8F0F-9F16D9620FC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48FF01C1-383E-4CDA-8F0F-9F16D9620FC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA7C66AF-882F-4246-95C8-C19A126FB2DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA7C66AF-882F-4246-95C8-C19A126FB2DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA7C66AF-882F-4246-95C8-C19A126FB2DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA7C66AF-882F-4246-95C8-C19A126FB2DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDD66186-997D-496A-A589-12484A930277}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDD66186-997D-496A-A589-12484A930277}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDD66186-997D-496A-A589-12484A930277}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDD66186-997D-496A-A589-12484A930277}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -154,5 +166,7 @@ Global
 		{554C5CD0-3740-40E0-831A-B67E8AB30124} = {901B8FAC-CEC4-49BC-9CF7-CCD1B2FE689C}
 		{3D4CA895-0CBF-4D96-AAAE-3AA0A2800F80} = {901B8FAC-CEC4-49BC-9CF7-CCD1B2FE689C}
 		{48FF01C1-383E-4CDA-8F0F-9F16D9620FC7} = {FCEE18A0-C84E-4534-94B7-585282E1E5C8}
+		{EA7C66AF-882F-4246-95C8-C19A126FB2DC} = {901B8FAC-CEC4-49BC-9CF7-CCD1B2FE689C}
+		{DDD66186-997D-496A-A589-12484A930277} = {FCEE18A0-C84E-4534-94B7-585282E1E5C8}
 	EndGlobalSection
 EndGlobal
