@@ -10,6 +10,7 @@ namespace Cfn.OnBoarding.TDD.StringCalculator
     {
         public int Add(string number)
         {
+            var delimiters = new char[] { ',', '\n' };
             if (number.Length == 0)
             {
                 return 0;
@@ -19,7 +20,7 @@ namespace Cfn.OnBoarding.TDD.StringCalculator
             {
                 return int.Parse(number);
             }
-            return number.Split(',').ToList().ConvertAll(int.Parse).Aggregate(0, (i, acc) => acc += i);
+            return number.Split(delimiters).ToList().ConvertAll(int.Parse).Aggregate(0, (i, acc) => acc += i);
 
         }
     }

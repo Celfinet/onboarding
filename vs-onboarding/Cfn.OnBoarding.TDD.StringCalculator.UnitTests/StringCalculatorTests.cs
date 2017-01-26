@@ -68,5 +68,21 @@ namespace Cfn.OnBoarding.TDD.StringCalculator.UnitTests
             //Assert
             Assert.AreEqual(expected, result);
         }
+
+        [TestCase("1,2\n3", 6)]
+        [TestCase("1\n2\n3", 6)]
+        [TestCase("1\n2,3", 6)]
+        [Description("Test Add method when input has different delimiters")]
+        public void AddTestDiffDelimiterString(string input, int expected)
+        {
+
+            //Arrange
+            var strCalculator = new StringCalculator();
+
+            //Act
+            var result = strCalculator.Add(input);
+            //Assert
+            Assert.AreEqual(expected, result);
+        }
     }
 }
