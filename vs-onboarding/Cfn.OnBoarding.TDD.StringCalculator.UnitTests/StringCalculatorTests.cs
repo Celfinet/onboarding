@@ -84,5 +84,19 @@ namespace Cfn.OnBoarding.TDD.StringCalculator.UnitTests
             //Assert
             Assert.AreEqual(expected, result);
         }
+
+        [TestCase("//%\n1,2\n3%5", 11)]
+        [Description("Test Add method when input can set delimiters")]
+        public void AddTestSetDelimiterString(string input, int expected)
+        {
+
+            //Arrange
+            var strCalculator = new StringCalculator();
+
+            //Act
+            var result = strCalculator.Add(input);
+            //Assert
+            Assert.AreEqual(expected, result);
+        }
     }
 }
