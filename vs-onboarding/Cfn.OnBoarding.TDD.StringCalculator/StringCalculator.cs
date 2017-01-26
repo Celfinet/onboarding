@@ -19,7 +19,7 @@ namespace Cfn.OnBoarding.TDD.StringCalculator
             {
                 return int.Parse(number);
             }
-            if ("//".Equals(number[0].ToString() + number[1].ToString()))
+            if ("//".Equals($"{number[0]}{number[1]}"))
             {
                 var posF = 0;
                 var countDl = 0;
@@ -64,7 +64,7 @@ namespace Cfn.OnBoarding.TDD.StringCalculator
                 throw new NegativeNotAllowedException(strError);
             }
             lNumbers = lNumbers.Where(x => x > 0 && x < 1000).ToList();
-            return lNumbers.Aggregate(0, (i, acc) => acc += i);
+            return lNumbers.Sum();
         }
     }
 }
