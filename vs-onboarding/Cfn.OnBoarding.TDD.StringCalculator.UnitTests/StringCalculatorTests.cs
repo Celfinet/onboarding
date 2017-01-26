@@ -86,6 +86,7 @@ namespace Cfn.OnBoarding.TDD.StringCalculator.UnitTests
         }
 
         [TestCase("//%\n1,2\n3%5", 11)]
+        [TestCase("//;\n1,2\n3;5;6", 17)]
         [Description("Test Add method when input can set delimiters")]
         public void AddTestSetDelimiterString(string input, int expected)
         {
