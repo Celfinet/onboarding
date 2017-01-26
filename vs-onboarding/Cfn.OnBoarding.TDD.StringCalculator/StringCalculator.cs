@@ -35,7 +35,15 @@ namespace Cfn.OnBoarding.TDD.StringCalculator
                 var length = number.Length - (pos + 1);
                 number = number.Substring(pos + 1, length);
             }
-            return number.Split(delimiters.ToArray()).ToList().ConvertAll(int.Parse).Aggregate(0, (i, acc) => acc += i);
+            var lNumbers = number.Split(delimiters.ToArray()).ToList().ConvertAll(int.Parse);
+            var lNegNumbers = lNumbers.Where(x => x < 0).ToList();
+
+            if (lNegNumbers.Any())
+            {
+                var strError ="negative not allowed: "+ lNegNumbers.ConvertAll(x => x.ToString()).Aggregate("", (i, acc) => acc += i + ";");
+                throw new NegativeNotAllowedException(strError);
+            }
+            return lNumbers.Aggregate(0, (i, acc) => acc += i);
 
         }
     }
