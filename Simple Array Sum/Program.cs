@@ -24,8 +24,6 @@ namespace Simple_Array_Sum
                 Console.WriteLine(sum);
                 Console.ReadLine();
             }
-
-
         }
     }
 }
