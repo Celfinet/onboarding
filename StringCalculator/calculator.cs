@@ -14,7 +14,7 @@ namespace StringCalculator
             int result = 0;
             if (numbers == null || numbers.Length == 0) return 0;
 
-
+            string[] arr;
             if (numbers.StartsWith("//") && numbers.Contains("\n"))
             {
 
@@ -29,17 +29,8 @@ namespace StringCalculator
                 {
                     return Convert.ToInt32(numbers);
                 }
-                string[] arr = numbers.Split(delimiter.ToCharArray()[0]);
-                int[] numbersArr = Array.ConvertAll(arr, int.Parse);
-                if (numbersArr.Where(a => a < 0).Count() > 0)
-                {
-                    string listOfNegative = String.Join(";", numbersArr.Where(a => a < 0).ToArray());
-                    throw new NegativeNotAllowedException(String.Format("negatives not allowed - {0}", listOfNegative));
-                }
-                foreach (int a in numbersArr)
-                {
-                    result += a;
-                }
+                arr = numbers.Split(delimiter.ToCharArray()[0]);
+             
             }
             else
             {
@@ -50,20 +41,22 @@ namespace StringCalculator
                     return Convert.ToInt32(numbers);
                 }
                 numbers = numbers.Replace("\n", ",");
-                string[] arr = numbers.Split(',');
-                int[] numbersArr = Array.ConvertAll(arr, int.Parse);
-                if (numbersArr.Where(a => a < 0).Count() > 0)
-                {
-                    string listOfNegative = String.Join(";", numbersArr.Where(a => a < 0).ToArray());
-                    throw new NegativeNotAllowedException(String.Format("negatives not allowed - {0}", listOfNegative));
-                }
-                foreach (int a in numbersArr)
-                {
-                    result += a;
-                }
+                arr = numbers.Split(',');
             }
 
-            
+            int[] numbersArr = Array.ConvertAll(arr, int.Parse);
+            if (numbersArr.Where(a => a < 0).Count() > 0)
+            {
+                string listOfNegative = String.Join(";", numbersArr.Where(a => a < 0).ToArray());
+                throw new NegativeNotAllowedException(String.Format("negatives not allowed - {0}", listOfNegative));
+            }
+            foreach (int a in numbersArr)
+            {
+                if (a > 1000) continue;
+                result += a;
+            }
+
+
             return result;
         }
     }

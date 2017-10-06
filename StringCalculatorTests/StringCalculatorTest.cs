@@ -102,5 +102,16 @@ namespace StringCalculatorTests
             });
         }
 
+        [TestCase("//;\n1;2;1001;4")]
+        [Description("Validate numbers bigger than 1000 should be ignored on String Calculator")]
+        public void StringCalculatorMoreThan1000Ignore(string input)
+        {
+            Calculator calculator = new Calculator();
+
+            var result = calculator.Add(input);
+
+            Assert.AreEqual(result, 7);
+        }
+
     }
 }
