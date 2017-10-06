@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maximize XOR", "Maximize XO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sherlock and The Beast", "Sherlock and The Beast\Sherlock and The Beast.csproj", "{2F81F244-BB63-4FF9-A504-5096A4744458}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "New Year Chaos", "New Year Chaos\New Year Chaos.csproj", "{B21CDB13-AD35-425E-BA48-AEEFDFCDB00A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,10 @@ Global
 		{2F81F244-BB63-4FF9-A504-5096A4744458}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F81F244-BB63-4FF9-A504-5096A4744458}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F81F244-BB63-4FF9-A504-5096A4744458}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B21CDB13-AD35-425E-BA48-AEEFDFCDB00A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B21CDB13-AD35-425E-BA48-AEEFDFCDB00A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B21CDB13-AD35-425E-BA48-AEEFDFCDB00A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B21CDB13-AD35-425E-BA48-AEEFDFCDB00A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,6 +85,7 @@ Global
 		{FA4A03EE-CBF3-49B2-A4F4-D06DCAB763FE} = {858C286E-ADD0-47F6-B881-40229AD463D5}
 		{55101A7E-C4B2-4466-AA99-1F69BC709292} = {858C286E-ADD0-47F6-B881-40229AD463D5}
 		{2F81F244-BB63-4FF9-A504-5096A4744458} = {858C286E-ADD0-47F6-B881-40229AD463D5}
+		{B21CDB13-AD35-425E-BA48-AEEFDFCDB00A} = {858C286E-ADD0-47F6-B881-40229AD463D5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AFDEF4B4-1DC0-4D81-BB2D-2E3E02D7002D}
