@@ -28,20 +28,16 @@ namespace New_Year_Chaos
                     }
                     if (index - positionOfIndex> 0)
                     {
-
                         bribes += index- positionOfIndex;
                         queue.Remove(index+1);
                         queue.Insert(index, index + 1);
                     }
                     if (index == 0)
                     {
-
                         strResults.AppendLine(bribes.ToString());
                     }
                 }
-
             }
-
             Console.Write(strResults);
             Console.ReadLine();
         }
