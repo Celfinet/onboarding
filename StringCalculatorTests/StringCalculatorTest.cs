@@ -90,6 +90,17 @@ namespace StringCalculatorTests
             Assert.AreEqual(result, 3);
         }
 
-       
+        [TestCase("//;\n1;2;-3;-4")]
+        [Description("Validate negative not allowed on String Calculator")]
+        public void StringCalculatorNegativeNotAllowed(string input)
+        {
+            Calculator calculator = new Calculator();
+
+            Assert.Throws<NegativeNotAllowedException>(() =>
+            {
+                var result = calculator.Add(input);
+            });
+        }
+
     }
 }
