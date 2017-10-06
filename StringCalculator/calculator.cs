@@ -19,17 +19,21 @@ namespace StringCalculator
             {
 
                 int index = numbers.IndexOf('\n');
-                string delimiter = numbers.Substring(2, 1);
-                if(delimiter.Length!=1) throw new InvalidOperationException();
+                string delimiter = numbers.Substring(2, index-2);
                 numbers = numbers.Substring(index + 1);
+                if (delimiter.Length > 1)
+                {
+                    delimiter = delimiter.Substring(1, delimiter.Length - 2);
+                }
 
-                if (!Regex.Match(numbers, String.Format("^(((-?[0-9])+[{0}])*(-?[0-9])+)$",delimiter)).Success) throw new InvalidOperationException();
+                numbers = numbers.Replace(delimiter, ";");
+                if (!Regex.Match(numbers, "^(((-?[0-9])+;)*(-?[0-9])+)$").Success) throw new InvalidOperationException();
 
                 if (Regex.Match(numbers, "^(-?[0-9])+$").Success)
                 {
                     return Convert.ToInt32(numbers);
                 }
-                arr = numbers.Split(delimiter.ToCharArray()[0]);
+                arr = numbers.Split(';');
              
             }
             else

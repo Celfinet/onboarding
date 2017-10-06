@@ -113,5 +113,15 @@ namespace StringCalculatorTests
             Assert.AreEqual(result, 7);
         }
 
+        [TestCase("//[***]\n1***2***3")]
+        [Description("Validate any format of delimiters on String Calculator")]
+        public void StringCalculatorSupportDelimiterAnyFormat(string input)
+        {
+            Calculator calculator = new Calculator();
+
+            var result = calculator.Add(input);
+
+            Assert.AreEqual(result, 6);
+        }
     }
 }
