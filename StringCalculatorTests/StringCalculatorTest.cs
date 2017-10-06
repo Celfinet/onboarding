@@ -134,5 +134,16 @@ namespace StringCalculatorTests
 
             Assert.AreEqual(result, 6);
         }
+
+        [TestCase("//[***][%]\n1***2%3")]
+        [Description("Validate multiple delimiters with lenth >1 on String Calculator")]
+        public void StringCalculatorMultipleDelimiterLenghtMoreThan1(string input)
+        {
+            Calculator calculator = new Calculator();
+
+            var result = calculator.Add(input);
+
+            Assert.AreEqual(result, 6);
+        }
     }
 }
