@@ -23,10 +23,18 @@ namespace StringCalculator
                 numbers = numbers.Substring(index + 1);
                 if (delimiter.Length > 1)
                 {
-                    delimiter = delimiter.Substring(1, delimiter.Length - 2);
+                    string[] arrDelimiters = delimiter.Split(']'); // [; [% [&
+                    for(int i = 0; i < arrDelimiters.Length; i++)
+                    {
+                        if (arrDelimiters[i].Length >0) {
+                            arrDelimiters[i] = arrDelimiters[i].Substring(1);
+                            numbers = numbers.Replace(arrDelimiters[i], ";");
+                        }
+
+                    }
+
                 }
 
-                numbers = numbers.Replace(delimiter, ";");
                 if (!Regex.Match(numbers, "^(((-?[0-9])+;)*(-?[0-9])+)$").Success) throw new InvalidOperationException();
 
                 if (Regex.Match(numbers, "^(-?[0-9])+$").Success)
