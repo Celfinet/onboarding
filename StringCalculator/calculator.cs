@@ -14,62 +14,69 @@ namespace StringCalculator
             int result = 0;
             if (numbers == null || numbers.Length == 0) return 0;
 
-            string[] arr;
-            if (numbers.StartsWith("//") && numbers.Contains("\n"))
-            {
 
-                int index = numbers.IndexOf('\n');
-                string delimiter = numbers.Substring(2, index-2);
-                numbers = numbers.Substring(index + 1);
-                if (delimiter.Length > 1)
-                {
-                    string[] arrDelimiters = delimiter.Split(']'); // [; [% [&
-                    for(int i = 0; i < arrDelimiters.Length; i++)
-                    {
-                        if (arrDelimiters[i].Length >0) {
-                            arrDelimiters[i] = arrDelimiters[i].Substring(1);
-                            numbers = numbers.Replace(arrDelimiters[i], ";");
-                        }
+            if (inputHasDelimiters(numbers))
+                numbers = escapeDelimiters(numbers);
 
-                    }
+            numbers = numbers.Replace("\n", ",");
+            if (isNotOnlyNumbersSeparatedByComma(numbers))
+                throw new InvalidOperationException();
+            
+            int[] numbersArr =parseToArrayOfNumbers(numbers);
 
-                }
-
-                if (!Regex.Match(numbers, "^(((-?[0-9])+;)*(-?[0-9])+)$").Success) throw new InvalidOperationException();
-
-                if (Regex.Match(numbers, "^(-?[0-9])+$").Success)
-                {
-                    return Convert.ToInt32(numbers);
-                }
-                arr = numbers.Split(';');
-             
-            }
-            else
-            {
-                if (!Regex.Match(numbers, "^(((-?[0-9])+[,\n])*(-?[0-9])+)$").Success) throw new InvalidOperationException();
-
-                if (Regex.Match(numbers, "^(-?[0-9])+$").Success)
-                {
-                    return Convert.ToInt32(numbers);
-                }
-                numbers = numbers.Replace("\n", ",");
-                arr = numbers.Split(',');
-            }
-
-            int[] numbersArr = Array.ConvertAll(arr, int.Parse);
             if (numbersArr.Where(a => a < 0).Count() > 0)
             {
-                string listOfNegative = String.Join(";", numbersArr.Where(a => a < 0).ToArray());
-                throw new NegativeNotAllowedException(String.Format("negatives not allowed - {0}", listOfNegative));
+                string negativesSeparatedByCommas = String.Join(";", numbersArr.Where(a => a < 0).ToArray());
+                throw new NegativeNotAllowedException(String.Format("negatives not allowed - {0}", negativesSeparatedByCommas));
             }
             foreach (int a in numbersArr)
             {
                 if (a > 1000) continue;
                 result += a;
             }
-
-
             return result;
+        }
+
+        public bool inputHasDelimiters(string input)
+        {
+            return input.StartsWith("//") && input.Contains("\n");
+        }
+
+        public string escapeDelimiters(string numbers)
+        {
+            int indexOfNewLine = numbers.IndexOf('\n');
+            string delimiter = numbers.Substring(2, indexOfNewLine - 2);
+            numbers = numbers.Substring(indexOfNewLine + 1);
+            if (delimiter.Length > 0)
+            {
+                string[] arrDelimiters = delimiter.Split(']');
+                // [; [% [&
+                for (int i = 0; i < arrDelimiters.Length; i++)
+                {
+                    if (arrDelimiters[i].Length == 0) continue;
+                    if (arrDelimiters[i].Length > 1) 
+                        arrDelimiters[i] = removeBracket(arrDelimiters[i]);
+                    numbers = numbers.Replace(arrDelimiters[i], ",");
+                }
+
+            }
+            return numbers;
+        }
+
+        public bool isNotOnlyNumbersSeparatedByComma(string inputString)
+        {
+            return !Regex.Match(inputString, "^(((-?[0-9])+,)*(-?[0-9])+)$").Success;
+        }
+
+        public string removeBracket(string input)
+        {
+            return input.Substring(1);
+        }
+
+        public int[] parseToArrayOfNumbers(string numbers)
+        {
+            string[] arrayToSome = numbers.Split(',');
+            return Array.ConvertAll(arrayToSome, int.Parse);
         }
     }
 }
